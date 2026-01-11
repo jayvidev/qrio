@@ -1,5 +1,5 @@
 import type { Row } from '@tanstack/react-table'
-import { Ellipsis, Info, Pencil } from 'lucide-react'
+import { Ellipsis, Info, Pencil, QrCode } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -13,9 +13,10 @@ interface Props<TData> {
   row: Row<TData>
   onEdit?: (data: TData) => void
   onDetails?: (data: TData) => void
+  onViewQr?: (data: TData) => void
 }
 
-export function DataTableRowActions<TData>({ row, onEdit, onDetails }: Props<TData>) {
+export function DataTableRowActions<TData>({ row, onEdit, onDetails, onViewQr }: Props<TData>) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -28,6 +29,12 @@ export function DataTableRowActions<TData>({ row, onEdit, onDetails }: Props<TDa
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
+        {onViewQr && (
+          <DropdownMenuItem onClick={() => onViewQr(row.original)}>
+            <QrCode />
+            Ver QR
+          </DropdownMenuItem>
+        )}
         {onDetails && (
           <DropdownMenuItem onClick={() => onDetails(row.original)}>
             <Info />

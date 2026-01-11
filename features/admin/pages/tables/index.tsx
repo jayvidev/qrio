@@ -13,6 +13,7 @@ import { tablesApi } from '@/lib/api/tables'
 import type { DiningTableList } from '@/lib/schemas/table/table.list.schema'
 
 import { getColumns } from './columns'
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 
 interface Props {
   title: string
@@ -31,14 +32,23 @@ export function TablesPage({ title, pathname, resource }: Props) {
   const [dialogOpen, setDialogOpen] = useState(false)
   const [dialogMode, setDialogMode] = useState<'create' | 'edit' | 'details'>('create')
   const [selected, setSelected] = useState<DiningTableList | null>(null)
+  const [qrOpen, setQrOpen] = useState(false)
+  const [qrRow, setQrRow] = useState<DiningTableList | null>(null)
 
   const columns = useMemo(
     () =>
-      getColumns((row) => {
-        setSelected(row)
-        setDialogMode('edit')
-        setDialogOpen(true)
-      }, undefined),
+      getColumns(
+        (row) => {
+          setSelected(row)
+          setDialogMode('edit')
+          setDialogOpen(true)
+        },
+        undefined,
+        (row) => {
+          setQrRow(row)
+          setQrOpen(true)
+        }
+      ),
     []
   )
 
@@ -87,6 +97,26 @@ export function TablesPage({ title, pathname, resource }: Props) {
           await refetch()
         }}
       />
+
+      <Dialog open={qrOpen} onOpenChange={setQrOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>{qrRow ? `QR de Mesa ${qrRow.tableNumber}` : 'QR de mesa'}</DialogTitle>
+          </DialogHeader>
+          {qrRow && (
+            <div className="flex items-center justify-center">
+              {/* Sirve imagen desde backend via proxy /api */}
+              <img
+                src={`/api/tables/${qrRow.id}/qr?size=256`}
+                alt={`QR de Mesa ${qrRow.tableNumber}`}
+                width={256}
+                height={256}
+                className="rounded-md border"
+              />
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </>
   )
 }
