@@ -1,0 +1,321 @@
+SET search_path TO public;
+
+BEGIN;
+
+-- Password (Dueño123@)
+INSERT INTO users (email, password, name, phone, role, restaurant_id, status) VALUES
+('juan.perez@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Juan Pérez', '+51987654321', 'DUEÑO', NULL, 'ACTIVO'),
+('maria.garcia@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'María García', '+51987654322', 'DUEÑO', NULL, 'ACTIVO'),
+('carlos.lopez@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Carlos López', '+51987654323', 'DUEÑO', NULL, 'ACTIVO'),
+('ana.martinez@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Ana Martínez', '+51987654324', 'DUEÑO', NULL, 'ACTIVO'),
+('luis.rodriguez@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Luis Rodríguez', '+51987654325', 'DUEÑO', NULL, 'ACTIVO'),
+('carmen.sanchez@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Carmen Sánchez', '+51987654326', 'DUEÑO', NULL, 'ACTIVO'),
+('pedro.ramirez@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Pedro Ramírez', '+51987654327', 'DUEÑO', NULL, 'INACTIVO'),
+('laura.torres@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Laura Torres', '+51987654328', 'DUEÑO', NULL, 'ACTIVO'),
+('jorge.flores@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Jorge Flores', '+51987654329', 'DUEÑO', NULL, 'ACTIVO'),
+('patricia.vargas@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Patricia Vargas', '+51987654330', 'DUEÑO', NULL, 'ACTIVO'),
+('roberto.castro@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Roberto Castro', '+51987654331', 'DUEÑO', NULL, 'ACTIVO'),
+('elena.jimenez@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Elena Jiménez', '+51987654332', 'DUEÑO', NULL, 'ACTIVO'),
+('miguel.herrera@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Miguel Herrera', '+51987654333', 'DUEÑO', NULL, 'ACTIVO'),
+('isabel.morales@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Isabel Morales', '+51987654334', 'DUEÑO', NULL, 'ACTIVO'),
+('francisco.ruiz@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Francisco Ruiz', '+51987654335', 'DUEÑO', NULL, 'INACTIVO'),
+('rosa.diaz@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Rosa Díaz', '+51987654336', 'DUEÑO', NULL, 'ACTIVO'),
+('antonio.mendoza@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Antonio Mendoza', '+51987654337', 'DUEÑO', NULL, 'ACTIVO'),
+('lucia.reyes@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Lucía Reyes', '+51987654338', 'DUEÑO', NULL, 'ACTIVO'),
+('ricardo.vega@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Ricardo Vega', '+51987654339', 'DUEÑO', NULL, 'ACTIVO'),
+('sofia.campos@email.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Sofía Campos', '+51987654340', 'DUEÑO', NULL, 'ACTIVO'),
+('tester@qrio.com', '$2a$12$t7M.vPpH00N2PM5rnXDcLOfPTt4z22cpm79SEV3BqEeJ9Olanzsfq', 'Usuario Prueba', '+51000000000', 'DUEÑO', NULL, 'ACTIVO');
+
+-- Password (AppAdmin123@)
+INSERT INTO app_admins (name, email, password, status)
+VALUES ('App Admin', 'appadmin@qrio.com', '$2a$12$s.2gv5YkW1dkvoJNLFIQf.GgZfdI5y/G.sOw4Ue.UiYAp6IGUARTa', 'ACTIVO');
+
+-- Password (Cocina123@)
+INSERT INTO users (email, password, name, phone, role, restaurant_id, branch_id, status) VALUES
+('miguel.cocina@qrio.com', '$2a$12$61ySeyj44.H/ChOJu13dkOdtgVdXVWTlAOo3mlis0MOaN0T54jrTW', 'Miguel Cocina', '+51912345702', 'COCINA', 1, 1, 'ACTIVO'),
+('roberto.parrillero@qrio.com', '$2a$12$61ySeyj44.H/ChOJu13dkOdtgVdXVWTlAOo3mlis0MOaN0T54jrTW', 'Roberto Parrillero', '+51912345706', 'COCINA', 4, 5, 'ACTIVO');
+
+-- Password (Empleado123@)
+INSERT INTO users (email, password, name, phone, role, restaurant_id, branch_id, status) VALUES
+('carlos.mesero@qrio.com', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'Carlos Mesero', '+51912345700', 'EMPLEADO', 1, 1, 'ACTIVO'),
+('ana.cajera@qrio.com', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'Ana Cajera', '+51912345701', 'EMPLEADO', 1, 1, 'ACTIVO'),
+('luis.mesero2@qrio.com', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'Luis Mesero Sucursal', '+51912345703', 'EMPLEADO', 1, 2, 'ACTIVO'),
+('david.admin@qrio.com', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'David Admin Pizzería', '+51912345704', 'EMPLEADO', 2, 3, 'ACTIVO'),
+('elena.mesero@qrio.com', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'Elena Mesero Sushi', '+51912345705', 'EMPLEADO', 3, 4, 'ACTIVO'),
+('sofia.barista@qrio.com', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'Sofia Barista', '+51912345707', 'EMPLEADO', 5, 6, 'ACTIVO');
+
+-- Todos los clientes tienen Password (Cliente123@) con hash de ejemplo (mismo que Empleado123@)
+INSERT INTO customers (code, name, email, phone, password, status) VALUES
+('CUST-001', 'Alberto Suárez', 'alberto.suarez@email.com', '+51912345601', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('CUST-002', 'Beatriz Luna', 'beatriz.luna@email.com', '+51912345602', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('CUST-003', 'César Paredes', 'cesar.paredes@email.com', '+51912345603', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_004', 'Diana Rojas', 'diana.rojas@email.com', '+51912345604', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_005', 'Eduardo Silva', 'eduardo.silva@email.com', '+51912345605', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_006', 'Fernanda Ortiz', 'fernanda.ortiz@email.com', '+51912345606', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_007', 'Gabriel Núñez', 'gabriel.nunez@email.com', '+51912345607', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_008', 'Helena Cruz', 'helena.cruz@email.com', '+51912345608', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'INACTIVO'),
+('customer_009', 'Ignacio Peña', 'ignacio.pena@email.com', '+51912345609', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_010', 'Julia Ríos', 'julia.rios@email.com', '+51912345610', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_011', 'Kevin Guzmán', 'kevin.guzman@email.com', '+51912345611', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_012', 'Liliana Carrillo', 'liliana.carrillo@email.com', '+51912345612', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_013', 'Mauricio Aguilar', 'mauricio.aguilar@email.com', '+51912345613', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_014', 'Natalia Medina', 'natalia.medina@email.com', '+51912345614', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_015', 'Óscar Salazar', 'oscar.salazar@email.com', '+51912345615', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_016', 'Paola Ramos', 'paola.ramos@email.com', '+51912345616', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_017', 'Quintín Molina', 'quintin.molina@email.com', '+51912345617', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'INACTIVO'),
+('customer_018', 'Raquel Ibarra', 'raquel.ibarra@email.com', '+51912345618', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_019', 'Sergio León', 'sergio.leon@email.com', '+51912345619', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO'),
+('customer_020', 'Teresa Navarro', 'teresa.navarro@email.com', '+51912345620', '$2a$12$4rGKhe9.XJ88qCcZcbDy7OkewmughTn94A00kdHU8ffsEwwtH6AlO', 'ACTIVO');
+
+INSERT INTO payment_methods (customer_id, type, payment_token, last4, brand) VALUES
+(1, 'TARJETA', 'tok_visa_4532001122334455', '4455', 'Visa'),
+(2, 'TARJETA', 'tok_mc_5412751234567890', '7890', 'Mastercard'),
+(3, 'TARJETA', 'tok_visa_4111222333444555', '4555', 'Visa'),
+(4, 'YAPE', 'yape_912345604', NULL, NULL),
+(5, 'TARJETA', 'tok_amex_371234567890123', '0123', 'Amex'),
+(6, 'PLIN', 'plin_912345606', NULL, NULL),
+(7, 'TARJETA', 'tok_visa_4539876543210987', '0987', 'Visa'),
+(8, 'TARJETA', 'tok_mc_5500112233445566', '5566', 'Mastercard'),
+(9, 'YAPE', 'yape_912345609', NULL, NULL),
+(10, 'TARJETA', 'tok_visa_4916123456789012', '9012', 'Visa'),
+(11, 'PLIN', 'plin_912345611', NULL, NULL),
+(12, 'TARJETA', 'tok_mc_5425678901234567', '4567', 'Mastercard'),
+(13, 'TARJETA', 'tok_visa_4024007134567890', '7890', 'Visa'),
+(14, 'YAPE', 'yape_912345614', NULL, NULL),
+(15, 'TARJETA', 'tok_visa_4532998877665544', '5544', 'Visa'),
+(16, 'PLIN', 'plin_912345616', NULL, NULL),
+(17, 'TARJETA', 'tok_mc_5512345678901234', '1234', 'Mastercard'),
+(18, 'TARJETA', 'tok_visa_4556123456789000', '9000', 'Visa'),
+(19, 'YAPE', 'yape_912345619', NULL, NULL),
+(20, 'TARJETA', 'tok_amex_340012345678901', '8901', 'Amex');
+
+INSERT INTO restaurants (user_id, name, description, logo_url, is_active) VALUES
+(1, 'El Sabor Peruano', 'Comida criolla tradicional', 'https://example.com/logos/sabor_peruano.png', TRUE),
+(2, 'Pizzería Bella Napoli', 'Auténtica pizza italiana', 'https://example.com/logos/bella_napoli.png', TRUE),
+(3, 'Sushi Bar Tokio', 'Sushi y comida japonesa', 'https://example.com/logos/sushi_tokio.png', TRUE),
+(4, 'Parrilla Argentina', 'Carnes a la parrilla', 'https://example.com/logos/parrilla_arg.png', TRUE),
+(5, 'Café Gourmet Lima', 'Cafetería especializada', 'https://example.com/logos/cafe_gourmet.png', TRUE),
+(6, 'Marisquería El Puerto', 'Pescados y mariscos frescos', 'https://example.com/logos/el_puerto.png', TRUE),
+(7, 'Restaurante Vegetalia', 'Comida vegetariana y vegana', 'https://example.com/logos/vegetalia.png', FALSE),
+(8, 'Chifa Oriental', 'Cocina chino-peruana', 'https://example.com/logos/chifa.png', TRUE),
+(9, 'Taquería Mexicana', 'Tacos y comida mexicana', 'https://example.com/logos/taqueria.png', TRUE),
+(10, 'Hamburguesería Premium', 'Hamburguesas gourmet', 'https://example.com/logos/burgers.png', TRUE),
+(11, 'Cevichería Costanera', 'Ceviches y tiraditos', 'https://example.com/logos/cevicheria.png', TRUE),
+(12, 'Pollos a la Brasa Don José', 'Pollo a la brasa tradicional', 'https://example.com/logos/don_jose.png', TRUE),
+(13, 'Panadería Artesanal', 'Pan y postres caseros', 'https://example.com/logos/panaderia.png', TRUE),
+(14, 'Restaurante Fusión', 'Cocina de autor', 'https://example.com/logos/fusion.png', FALSE),
+(15, 'Trattoria Italiana', 'Pastas y risottos', 'https://example.com/logos/trattoria.png', TRUE),
+(16, 'BBQ & Ribs House', 'Costillas y barbacoa', 'https://example.com/logos/bbq_house.png', TRUE),
+(17, 'Thai Food Express', 'Comida tailandesa', 'https://example.com/logos/thai_food.png', TRUE),
+(18, 'Sandwichería Gourmet', 'Sandwiches especiales', 'https://example.com/logos/sandwiches.png', TRUE),
+(19, 'Anticuchería La Esquina', 'Anticuchos y parrillas', 'https://example.com/logos/anticucheria.png', TRUE),
+(20, 'Heladería Artesanal', 'Helados naturales', 'https://example.com/logos/heladeria.png', TRUE);
+
+INSERT INTO restaurant_activation_requests (restaurant_id, user_id, status, comment) VALUES
+(7, 2, 'PENDIENTE', 'Esperando revisión de documentos'),
+(14, 4, 'PENDIENTE', 'Solicitud en proceso de evaluación');
+
+INSERT INTO branches (restaurant_id, name, address, phone, schedule) VALUES
+(1, 'El Sabor Peruano - Miraflores', 'Av. Larco 1234, Miraflores', '+5114567801', 'Lun-Dom 12:00-23:00'),
+(1, 'El Sabor Peruano - San Isidro', 'Av. Conquistadores 567, San Isidro', '+5114567802', 'Lun-Dom 12:00-23:00'),
+(2, 'Bella Napoli - Barranco', 'Av. Grau 890, Barranco', '+5114567803', 'Mar-Dom 18:00-00:00'),
+(3, 'Sushi Bar Tokio - Centro', 'Jr. de la Unión 456, Centro', '+5114567804', 'Lun-Sáb 12:00-22:00'),
+(4, 'Parrilla Argentina - Surco', 'Av. Primavera 789, Surco', '+5114567805', 'Lun-Dom 12:00-01:00'),
+(5, 'Café Gourmet - San Miguel', 'Av. La Marina 234, San Miguel', '+5114567806', 'Lun-Vie 07:00-20:00'),
+(6, 'El Puerto - Callao', 'Av. Sáenz Peña 567, Callao', '+5114567807', 'Lun-Dom 11:00-22:00'),
+(7, 'Vegetalia - Magdalena', 'Av. Brasil 890, Magdalena', '+5114567808', 'Lun-Sáb 11:00-21:00'),
+(8, 'Chifa Oriental - Jesús María', 'Av. Salaverry 123, Jesús María', '+5114567809', 'Lun-Dom 11:30-23:00'),
+(9, 'Taquería - La Molina', 'Av. Javier Prado 456, La Molina', '+5114567810', 'Mar-Dom 12:00-23:00'),
+(10, 'Burguer Premium - Lince', 'Av. Arequipa 789, Lince', '+5114567811', 'Lun-Dom 11:00-00:00'),
+(11, 'Cevichería - Chorrillos', 'Av. Huaylas 234, Chorrillos', '+5114567812', 'Lun-Dom 10:00-18:00'),
+(12, 'Don José - Los Olivos', 'Av. Alfredo Mendiola 567, Los Olivos', '+5114567813', 'Lun-Dom 11:00-23:00'),
+(13, 'Panadería - Pueblo Libre', 'Av. La Mar 890, Pueblo Libre', '+5114567814', 'Lun-Dom 06:00-22:00'),
+(14, 'Fusión - San Borja', 'Av. Aviación 123, San Borja', '+5114567815', 'Mié-Dom 19:00-00:00'),
+(15, 'Trattoria - Miraflores', 'Calle Schell 456, Miraflores', '+5114567816', 'Lun-Dom 12:00-23:00'),
+(16, 'BBQ House - Surquillo', 'Av. Angamos 789, Surquillo', '+5114567817', 'Vie-Dom 18:00-01:00'),
+(17, 'Thai Express - San Isidro', 'Av. Camino Real 234, San Isidro', '+5114567818', 'Lun-Sáb 12:00-22:00'),
+(18, 'Sandwiches - Breña', 'Av. Brasil 567, Breña', '+5114567819', 'Lun-Vie 08:00-20:00'),
+(19, 'Anticuchería - Rímac', 'Av. Francisco Pizarro 890, Rímac', '+5114567820', 'Jue-Dom 18:00-02:00');
+
+INSERT INTO dining_tables (branch_id, table_number, floor, qr_code) VALUES
+(1, 1, 1, 'QR_BR1_T01_ABC123'),
+(1, 2, 1, 'QR_BR1_T02_DEF456'),
+(1, 3, 2, 'QR_BR1_T03_GHI789'),
+(2, 1, 1, 'QR_BR2_T01_JKL012'),
+(2, 2, 1, 'QR_BR2_T02_MNO345'),
+(3, 1, 1, 'QR_BR3_T01_PQR678'),
+(3, 2, 2, 'QR_BR3_T02_STU901'),
+(4, 1, 1, 'QR_BR4_T01_VWX234'),
+(5, 1, 1, 'QR_BR5_T01_YZA567'),
+(5, 2, 2, 'QR_BR5_T02_BCD890'),
+(6, 1, 1, 'QR_BR6_T01_EFG123'),
+(7, 1, 1, 'QR_BR7_T01_HIJ456'),
+(8, 1, 1, 'QR_BR8_T01_KLM789'),
+(9, 1, 1, 'QR_BR9_T01_NOP012'),
+(10, 1, 2, 'QR_BR10_T01_QRS345'),
+(11, 1, 1, 'QR_BR11_T01_TUV678'),
+(12, 1, 1, 'QR_BR12_T01_WXY901'),
+(13, 1, 1, 'QR_BR13_T01_ZAB234'),
+(14, 1, 2, 'QR_BR14_T01_CDE567'),
+(15, 1, 1, 'QR_BR15_T01_FGH890');
+
+INSERT INTO categories (restaurant_id, name) VALUES
+(1, 'Entradas'),
+(1, 'Platos de Fondo'),
+(2, 'Pizzas'),
+(2, 'Pastas'),
+(3, 'Sushi'),
+(3, 'Makis'),
+(4, 'Carnes'),
+(4, 'Guarniciones'),
+(5, 'Bebidas'),
+(5, 'Postres'),
+(6, 'Ceviches'),
+(6, 'Pescados'),
+(7, 'Vegano'),
+(7, 'Vegetariano'),
+(8, 'Chifa'),
+(9, 'Tacos'),
+(10, 'Hamburguesas'),
+(11, 'Mariscos'),
+(12, 'Pollos'),
+(13, 'Panes');
+
+INSERT INTO products (category_id, name, description, price, image_url) VALUES
+(1, 'Causa Limeña', 'Causa rellena de pollo', 18.50, 'https://example.com/dishes/causa.jpg'),
+(1, 'Papa a la Huancaína', 'Papas con salsa de ají amarillo', 15.00, 'https://example.com/dishes/huancaina.jpg'),
+(2, 'Lomo Saltado', 'Carne salteada con papas fritas', 32.00, 'https://example.com/dishes/lomo.jpg'),
+(2, 'Ají de Gallina', 'Pollo en crema de ají amarillo', 28.00, 'https://example.com/dishes/aji_gallina.jpg'),
+(3, 'Pizza Margherita', 'Tomate, mozzarella y albahaca', 35.00, 'https://example.com/dishes/margherita.jpg'),
+(3, 'Pizza Pepperoni', 'Pepperoni y queso', 38.00, 'https://example.com/dishes/pepperoni.jpg'),
+(4, 'Spaghetti Carbonara', 'Pasta con salsa carbonara', 30.00, 'https://example.com/dishes/carbonara.jpg'),
+(5, 'Nigiri de Salmón', '2 piezas de nigiri', 22.00, 'https://example.com/dishes/nigiri.jpg'),
+(6, 'Roll California', '8 piezas', 28.00, 'https://example.com/dishes/california.jpg'),
+(7, 'Bife de Chorizo', '400g de carne premium', 65.00, 'https://example.com/dishes/bife.jpg'),
+(8, 'Papas Fritas', 'Porción grande', 12.00, 'https://example.com/dishes/papas.jpg'),
+(9, 'Café Americano', 'Café negro', 8.00, 'https://example.com/dishes/americano.jpg'),
+(10, 'Tiramisú', 'Postre italiano clásico', 18.00, 'https://example.com/dishes/tiramisu.jpg'),
+(11, 'Ceviche Clásico', 'Pescado fresco marinado', 35.00, 'https://example.com/dishes/ceviche.jpg'),
+(12, 'Sudado de Pescado', 'Pescado en caldo aromático', 38.00, 'https://example.com/dishes/sudado.jpg'),
+(13, 'Bowl Vegano', 'Quinoa con vegetales', 28.00, 'https://example.com/dishes/bowl.jpg'),
+(16, 'Tacos al Pastor', '3 tacos con piña', 24.00, 'https://example.com/dishes/tacos.jpg'),
+(17, 'Burger Clásica', 'Carne, lechuga, tomate, queso', 32.00, 'https://example.com/dishes/burger.jpg'),
+(19, 'Pollo Entero', 'Pollo a la brasa con papas', 55.00, 'https://example.com/dishes/pollo.jpg'),
+(20, 'Croissant', 'Croissant de mantequilla', 8.50, 'https://example.com/dishes/croissant.jpg');
+
+INSERT INTO offers (restaurant_id, title, description, offer_discount_percentage, active) VALUES
+(1, '2x1 en Causas', 'Compra una causa y lleva la segunda gratis', 50.00, TRUE),
+(2, 'Pizza Familiar 50% OFF', 'Descuento en pizzas familiares', 50.00, TRUE),
+(3, 'Combo Sushi', '20 piezas de sushi variado', 15.00, TRUE),
+(4, 'Parrilla para 2', 'Parrillada completa para dos personas', 20.00, TRUE),
+(5, 'Café + Postre', 'Combo café y postre del día', 25.00, TRUE),
+(6, 'Martes de Ceviche', 'Ceviche con chicha morada', 30.00, TRUE),
+(7, 'Menú Vegano', 'Entrada + plato + jugo', 20.00, TRUE),
+(8, 'Combo Chifa', 'Chaufa + wantán frito + bebida', 15.00, TRUE),
+(9, 'Happy Hour Tacos', '5 tacos + cerveza', 25.00, TRUE),
+(10, 'Burger Doble', 'Dos hamburguesas + papas', 30.00, TRUE),
+(11, 'Ceviche Mixto XL', 'Ceviche mixto para compartir', 20.00, TRUE),
+(12, 'Pollo + Ensalada', 'Medio pollo + ensalada grande', 25.00, TRUE),
+(13, 'Desayuno Completo', 'Pan + café + huevos + jugo', 20.00, TRUE),
+(14, 'Menú Degustación', '5 tiempos del chef', 15.00, TRUE),
+(15, 'Pasta del Día', 'Pasta + ensalada + pan', 10.00, FALSE),
+(16, 'BBQ Ribs Combo', 'Costillas + 2 guarniciones', 25.00, TRUE),
+(17, 'Pad Thai Especial', 'Pad Thai con camarones', 20.00, TRUE),
+(18, 'Sandwich + Jugo', 'Cualquier sandwich + jugo natural', 15.00, TRUE),
+(19, 'Anticucho Mix', 'Anticuchos variados para 2', 30.00, TRUE),
+(20, '3 Bolas de Helado', 'Tres sabores a elección', 20.00, TRUE);
+
+INSERT INTO offer_products (offer_id, product_id, quantity) VALUES
+(1, 1, 1),
+(2, 5, 1),
+(3, 8, 2),
+(4, 10, 1),
+(5, 12, 1),
+(6, 14, 1),
+(7, 16, 1),
+(8, 18, 1),
+(9, 17, 1),
+(10, 19, 2),
+(11, 14, 2),
+(12, 20, 1),
+(13, 4, 1),
+(14, 7, 1),
+(15, 7, 1),
+(16, 19, 2),
+(17, 18, 1),
+(18, 2, 1),
+(19, 13, 2),
+(20, 5, 3);
+
+INSERT INTO employee_permissions (user_id, restaurant_id, branch_id, permission) VALUES
+(23, 1, 1, 'VER_ORDENES'),
+(23, 1, 1, 'CREAR_ORDENES'),
+(24, 1, 1, 'PROCESAR_PAGOS'),
+(24, 1, 1, 'VER_REPORTES'),
+(21, 1, 1, 'VER_ORDENES'),
+(21, 1, 1, 'MARCAR_COMPLETADO'),
+(25, 1, 2, 'VER_ORDENES'),
+(26, 2, 3, 'VER_TODAS_ORDENES'),
+(26, 2, 3, 'EDITAR_MENU'),
+(27, 3, 4, 'VER_ORDENES'),
+(22, 4, 5, 'VER_ORDENES'),
+(28, 5, 6, 'VER_ORDENES');
+
+INSERT INTO orders (table_id, customer_id, status, total, people) VALUES
+(1, 1, 'COMPLETADO', 95.50, 2),
+(2, 2, 'COMPLETADO', 123.00, 4),
+(3, 3, 'EN_PROGRESO', 68.00, 3),
+(4, 4, 'PENDIENTE', 45.50, 2),
+(5, 5, 'COMPLETADO', 156.00, 5),
+(6, 6, 'COMPLETADO', 87.50, 2),
+(7, 7, 'CANCELADO', 0.00, 2),
+(8, 8, 'COMPLETADO', 112.00, 3),
+(9, 9, 'EN_PROGRESO', 76.00, 2),
+(10, 10, 'COMPLETADO', 198.50, 6),
+(11, 11, 'PENDIENTE', 65.00, 2),
+(12, 12, 'COMPLETADO', 143.00, 4),
+(13, 13, 'COMPLETADO', 89.00, 3),
+(14, 14, 'EN_PROGRESO', 120.00, 4),
+(15, 15, 'COMPLETADO', 54.00, 2),
+(1, 16, 'COMPLETADO', 167.50, 5),
+(2, 17, 'PENDIENTE', 92.00, 3),
+(3, 18, 'COMPLETADO', 78.50, 2),
+(4, 19, 'EN_PROGRESO', 135.00, 4),
+(5, 20, 'COMPLETADO', 102.00, 3);
+
+INSERT INTO order_items (order_id, product_id, quantity, unit_price, subtotal) VALUES
+(1, 1, 2, 18.50, 37.00),
+(1, 3, 1, 32.00, 32.00),
+(1, 12, 2, 8.00, 16.00),
+(2, 5, 2, 35.00, 70.00),
+(2, 7, 1, 30.00, 30.00),
+(3, 10, 1, 65.00, 65.00),
+(4, 14, 1, 35.00, 35.00),
+(5, 19, 3, 32.00, 96.00),
+(5, 11, 2, 12.00, 24.00),
+(6, 6, 2, 38.00, 76.00),
+(8, 8, 2, 22.00, 44.00),
+(8, 13, 2, 18.00, 36.00),
+(9, 18, 2, 24.00, 48.00),
+(10, 20, 2, 55.00, 110.00),
+(10, 12, 2, 18.00, 36.00),
+(12, 3, 3, 32.00, 96.00),
+(13, 14, 2, 35.00, 70.00),
+(14, 15, 2, 38.00, 76.00),
+(16, 10, 2, 65.00, 130.00),
+(18, 2, 3, 15.00, 45.00);
+
+INSERT INTO product_branch_availability (product_id, branch_id) VALUES
+(1, 1), (1, 2), (2, 1), (2, 2), (3, 1), (3, 2), (4, 1), (4, 2),
+(5, 3), (6, 3), (7, 3),
+(8, 4), (9, 4),
+(10, 5), (11, 5),
+(12, 6), (13, 6),
+(14, 7), (15, 7),
+(16, 8),
+(17, 9),
+(18, 10),
+(19, 11),
+(20, 12);
+
+COMMIT;

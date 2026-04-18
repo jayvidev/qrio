@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.cibertec.qriomobile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+
+    </fragment>
+
+
+    <!-- LOGIN -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.cibertec.qriomobile.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_login_to_completeProfile"
+            app:destination="@id/completeProfileFragment"/>
+
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/homeFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/completeProfileFragment"
+        android:name="com.cibertec.qriomobile.CompleteProfileFragment"
+        android:label="Complete Profile"
+        tools:layout="@layout/fragment_complete_profile">
+
+        <action
+            android:id="@+id/action_completeProfile_to_home"
+            app:destination="@id/homeFragment"/>
+    </fragment>
+
+
+    <!-- HOME -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.cibertec.qriomobile.HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <!-- Acción hacia Perfil -->
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+
+        <!-- Acción hacia Comercio -->
+        <action
+            android:id="@+id/action_homeFragment_to_tradeFragment"
+            app:destination="@id/fragment_trade" />
+
+        <!-- Acción hacia Catalogo -->
+        <action
+            android:id="@+id/action_homeFragment_to_catalogFragment"
+            app:destination="@id/fragment_catalog" />
+
+        <!-- Acción hacia Ajustes -->
+        <action
+            android:id="@+id/action_homeFragment_to_promotionFragment"
+            app:destination="@id/fragment_promotion" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_detailPromotionFragment"
+            app:destination="@id/fragment_detail_promotion" />
+    </fragment>
+
+
+
+
+    <!-- CATALOG LIST -->
+    <fragment
+        android:id="@+id/fragment_catalog"
+        android:name="com.cibertec.qriomobile.CatalogFragment"
+        android:label="Catalog"
+        tools:layout="@layout/fragment_catalog">
+        <argument
+            android:name="branchId"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="tableNumber"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_catalogFragment_to_detailCatalogFragment"
+            app:destination="@id/fragment_detail_catalog" />
+        <action
+            android:id="@+id/action_catalog_to_chat"
+            app:destination="@id/aiChatFragment" />
+    </fragment>
+
+    <!-- CATALOG DETAIL -->
+
+    <fragment
+        android:id="@+id/fragment_detail_catalog"
+        android:name="com.cibertec.qriomobile.DetailCatalogFragment"
+        android:label="Catalog Detail"
+        tools:layout="@layout/fragment_detail_catalog">
+
+        <argument
+            android:name="id"
+            app:argType="long" />
+
+        <argument
+            android:name="nombre"
+            app:argType="string" />
+
+        <argument
+            android:name="descripcion"
+            app:argType="string" />
+
+        <argument
+            android:name="precio"
+            app:argType="float" />
+
+        <argument
+            android:name="imagen"
+            app:argType="integer" />
+        
+        <!-- Nuevo argumento URL -->
+        <argument
+            android:name="imageUrl"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+
+    </fragment>
+
+    <!-- CAR / CART -->
+    <fragment
+        android:id="@+id/fragment_car"
+        android:name="com.cibertec.qriomobile.presentation.fragments.CarFragment"
+        android:label="Car"
+        tools:layout="@layout/fragment_car">
+        <action
+            android:id="@+id/action_carFragment_to_summaryStripeFragment"
+            app:destination="@id/fragment_summary_stripe" />
+    </fragment>
+
+
+    <!-- PROMOTION LIST -->
+    <fragment
+        android:id="@+id/fragment_promotion"
+        android:name="com.cibertec.qriomobile.PromotionFragment"
+        android:label="Promotion"
+        tools:layout="@layout/fragment_promotion">
+
+        <argument
+            android:name="restaurantId"
+            app:argType="long"
+            android:defaultValue="0L" />
+
+        <action
+            android:id="@+id/action_promotionFragment_to_detailPromotionFragment"
+            app:destination="@id/fragment_detail_promotion" />
+    </fragment>
+
+    <!-- PROMOTION DETAIL -->
+    <fragment
+        android:id="@+id/fragment_detail_promotion"
+        android:name="com.cibertec.qriomobile.DetailPromotionFragment"
+        android:label="Promotion Detail"
+        tools:layout="@layout/fragment_detail_promotion">
+
+        <argument
+            android:name="promoId"
+            app:argType="long" />
+
+        <argument
+            android:name="nombre"
+            app:argType="string" />
+
+        <argument
+            android:name="precioFinal"
+            app:argType="float" />
+
+        <argument
+            android:name="precioOriginal"
+            app:argType="float" />
+
+        <argument
+            android:name="descuento"
+            app:argType="integer" />
+
+        <argument
+            android:name="imagen"
+            app:argType="integer" />
+    </fragment>
+
+
+
+    <!-- TRADE -->
+    <fragment
+        android:id="@+id/fragment_trade"
+        android:name="com.cibertec.qriomobile.presentation.fragments.TradeFragment"
+        android:label="Trade"
+        tools:layout="@layout/fragment_trade">
+        <action
+            android:id="@+id/action_tradeFragment_to_branchListFragment"
+            app:destination="@id/branchListFragment" />
+        <action
+            android:id="@+id/action_tradeFragment_to_promotionFragment"
+            app:destination="@id/fragment_promotion" />
+    </fragment>
+
+    <!-- BRANCH LIST -->
+    <fragment
+        android:id="@+id/branchListFragment"
+        android:name="com.cibertec.qriomobile.presentation.fragments.BranchListFragment"
+        android:label="Branches"
+        tools:layout="@layout/fragment_branch_list">
+        <argument
+            android:name="restaurantId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_branchListFragment_to_catalogFragment"
+            app:destination="@id/fragment_catalog" />
+    </fragment>
+
+    <!-- PROFILE -->
+    <fragment
+        android:id="@+id/fragment_profile"
+        android:name="com.cibertec.qriomobile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <!-- SUMMARY / CHECKOUT -->
+    <fragment
+        android:id="@+id/fragment_summary_stripe"
+        android:name="com.cibertec.qriomobile.presentation.fragments.SummaryStripeFragment"
+        android:label="Summary"
+        tools:layout="@layout/fragment_summary_stripe">
+        <action
+            android:id="@+id/action_summaryStripeFragment_to_confirmationStripeFragment"
+            app:destination="@id/fragment_confirmation_stripe" />
+    </fragment>
+
+    <!-- CONFIRMATION -->
+    <fragment
+        android:id="@+id/fragment_confirmation_stripe"
+        android:name="com.cibertec.qriomobile.presentation.fragments.ConfirmationStripeFragment"
+        android:label="Confirmation"
+        tools:layout="@layout/fragment_confirmation_stripe">
+        <action
+            android:id="@+id/action_confirmationStripeFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/aiChatFragment"
+        android:name="com.cibertec.qriomobile.presentation.fragments.AiChatFragment"
+        android:label="AI Chat"
+        tools:layout="@layout/fragment_ai_chat">
+        <argument
+            android:name="branchId"
+            app:argType="long" />
+    </fragment>
+
+</navigation>

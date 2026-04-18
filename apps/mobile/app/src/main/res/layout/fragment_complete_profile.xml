@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_login"
+    android:orientation="vertical">
+    <!-- 🔶 PARTE SUPERIOR CON GRADIENTE Y LOGO -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="208dp">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_launcher_foreground" />
+    </RelativeLayout>
+
+    <!-- 🔷 PARTE INFERIOR BLANCA -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_login_bottom"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_lg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_md"
+            android:text="Completa tu perfil"
+            android:textColor="@color/gold_title"
+            android:textSize="@dimen/text_xl"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/input_field"
+            android:hint="Nombre completo"
+            android:paddingHorizontal="@dimen/padding_md"
+            android:textSize="@dimen/text_md" />
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/margin_md"
+            android:background="@drawable/input_field"
+            android:hint="Teléfono"
+            android:inputType="phone"
+            android:paddingHorizontal="@dimen/padding_md"
+            android:textSize="@dimen/text_md" />
+
+        <Button
+            android:id="@+id/btnSaveProfile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/margin_lg"
+            android:background="@drawable/btn_login_background"
+            android:text="Guardar y continuar"
+            android:textColor="@color/white_pure"
+            android:textSize="@dimen/button_text_size" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
